@@ -1,0 +1,40 @@
+{
+    "ReRoutes": [
+      {
+        "DownstreamPathTemplate": "/api/user/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "172.17.0.1",
+            "Port": 5000
+          }
+        ],
+        "UpstreamPathTemplate": "/user/{catchAll}"
+      },
+      {
+        "DownstreamPathTemplate": "/skill-tracker/api/admin/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "172.17.0.1",
+            "Port": 5001
+          }
+        ],
+        "UpstreamPathTemplate": "/admin/{catchAll}"
+      },
+      {
+        "DownstreamPathTemplate": "/skill-tracker/api/engineer/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "172.17.0.1",
+            "Port": 5001
+          }
+        ],
+        "UpstreamPathTemplate": "/engineer/{catchAll}"
+      }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:9000"
+    }
+}
